@@ -20,19 +20,19 @@ describe('GitHub profile finder', function() {
 
   it('finds profiles', function() {
 
-    searchBox.sendKeys('spike01');
+    searchBox.sendKeys('spikezilla');
     searchButton.click();
 
     var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
-    expect(profiles.get(0).getText()).toEqual('spike01');
+    expect(profiles.get(0).getText()).toEqual('spikezilla');
   });
 
   it('finds the last Spike', function() { //this is a silly test, but roll with it
-    searchBox.sendKeys('spike01');
+    searchBox.sendKeys('spike');
     searchButton.click();
 
     var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
-    expect(profiles.last().getText()).toEqual('spike01');
+    expect(profiles.last().getText()).toEqual('spikezilla');
   });
 
 });
